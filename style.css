@@ -3,7 +3,6 @@ html {
     color: white;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    margin-top: 210px;
 }
 
 a {
@@ -56,3 +55,9 @@ a {
     color: white;
   }
   
+  .contact {
+    display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  }
