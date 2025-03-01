@@ -1,16 +1,41 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>welcome to syl's website!</title>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <div id="overlay">
+        <button class="enter">click anywhere to enter</button>
+    </div>
+<div class="html">
+<img src="https://avatars.githubusercontent.com/u/201305644?s=400&amp;u=6135e8591803b714f00bc590069a3f920d12069d&amp;v=4" class="pfp">
 <h1>hi, im syl</h1>
 <p>javascript and python developer</p>
-<br>
 <h1>contact me</h1>
 <a href="https://discord.com/users/1345213432453922847">discord (your best bet)</a> | <a href="mailto:notouriouslybad@proton.me">email me</a>
+<audio id="bg-music" src="lo.mp3" loop=""></audio>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+                const overlay = document.getElementById('overlay');
+                const content = document.querySelector('.html');
+                const bgMusic = document.getElementById('bg-music');
+                const volumeControl = document.getElementById('volume-control');
+    
+                overlay.addEventListener('click', () => {
+                    overlay.style.opacity = '0';
+                    setTimeout(() => {
+                        overlay.style.display = 'none';
+                        content.style.display = 'flex';
+                        bgMusic.play();
+                    }, 1000);
+                });
+                volumeControl.addEventListener('input', (e) => {
+                    bgMusic.volume = e.target.value;
+                });
+            });
+    </script>
 </body>
 </html>
