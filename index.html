@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="enter-popup">
-    <a class="enter">click to enter!</a>
+    <a id="enter-button" class="enter-button">click to enter!</a>
     </div>
 <audio id="enter-sound" src="drift.mp3" loop=""></audio>
 <div id="overlay">
@@ -65,6 +65,7 @@ const textElement = document.getElementById("text");
 const overlay = document.getElementById("overlay");
 const audio = document.getElementById("enter-sound");
 const phrases = [
+    "",
     "a-",
     "a-",
     "a-",
