@@ -47,54 +47,19 @@ function updateTitle() {
     requestAnimationFrame(updateTitle);
 }
 
-document.getElementById('enter-popup').addEventListener('click', function() {
-    let enterPopup = document.getElementById('enter-popup');
-    let enterSound = document.getElementById('enter-sound');
+    const audio = document.getElementById('enter-sound');
+    const volumeSlider = document.getElementById('volume');
+    const enterOverlay = document.getElementById('enter-overlay');
 
-    enterSound.play();
-    enterPopup.style.transition = 'all 0.3s ease';
-    enterPopup.style.opacity = '0';
-    setTimeout(() => {
-        enterPopup.style.display = 'none';
-    }, 500); 
+    volumeSlider.addEventListener('input', function() {
+      audio.volume = volumeSlider.value;
+    });
 
-    requestAnimationFrame(updateTitle);
-});
-
-const textElement = document.getElementById("text");
-const overlay = document.getElementById("overlay");
-const audio = document.getElementById("enter-sound");
-const phrases = [
-    "",
-    "a-",
-    "a-",
-    "a-",
-    "a-",
-    "anarchist",
-    "anarchist sancutary."
-];
-const delays = [0, 0.4, 0.2, 0.2, 0.3, 0.3, 0.01];
-
-audio.addEventListener("play", () => {
-    let i = 0;
-    overlay.style.opacity = "1";
-    function updateText() {
-        if (i < phrases.length) {
-            textElement.textContent = phrases[i];
-            setTimeout(updateText, delays[i] * 1000);
-            i++;
-        } else {
-            setTimeout(() => {
-                overlay.style.opacity = "0";
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                    }, 500); 
-            }, 500);
-        }
-    }
-    updateText();
-});
-
+    enterOverlay.addEventListener('click', function() {
+      enterOverlay.style.display = 'none';
+      audio.play();
+    });
+  
 </script>
 </body>
 </html>
