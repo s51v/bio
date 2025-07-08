@@ -19,6 +19,10 @@ a {
     height: 100px;
 }
   
+ .pfp {
+  transform: scale(1.05);
+ }
+
   .enter-button {
     top: 50%;
     left: 50%;
